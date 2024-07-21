@@ -1,8 +1,0 @@
-mixin button(type, text, href='#', disabled=false)
-  if type === 'ghost'
-    if disabled
-      button.c-button(class=`c-button--${type}` disabled=disabled) #{text} 
-    else
-      a.c-button(class=`c-button--${type}` href=href role="link") #{text} 
-  else
-    button.c-button(class=`c-button--${type}` disabled=disabled) #{text} 
