@@ -1,0 +1,74 @@
+// Variables
+
+$primary-color: #007ACD;
+$primary-hover-color: #002457;
+
+$secondary-border-color: $primary-color;
+$secondary-hover-color: $primary-hover-color;
+
+$ghost-text-color: $primary-color;
+$ghost-hover-color: $primary-hover-color;
+
+$disabled-bg-color: #dadada;
+$disabled-text-color: #8f8f8f;
+
+$text-color: #fff;
+$font-size: 16px;
+$padding: 8px 20px;
+$transition: 0.3s;
+
+$error-color : #CC0033;
+$link-focus-color : #3498db;
+
+$success-green : #0C762E;
+
+// Couleurs des badges
+$badge-green-color: #008480;
+$badge-blue-color: #007ACD;
+$badge-purple-color: #9A0CA7;
+
+// Typo
+$font-family: Lato;
+
+$default-font-size: 16px;
+$default-font-family: 'Lato', sans-serif;
+$default-line-height: 120%;
+$default-font-weight: 400;
+
+@mixin typo(
+  $font-size: $default-font-size,
+  $font-family: $default-font-family,
+  $line-height: $default-line-height,
+  $font-weight: $default-font-weight
+) {
+  font-size: $font-size;
+  font-family: $font-family;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+
+// break point
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: $breakpoint-xs) { @content; }
+  }
+  @else if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) { @content; }
+  }
+  @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) { @content; }
+  }
+}

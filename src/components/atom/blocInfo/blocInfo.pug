@@ -1,0 +1,8 @@
+include ../buttons/buttons
+mixin blocInfo(text)
+    .c-blocInfo
+        svg(xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M21.25 1.20831H8.75C7.36929 1.20831 6.25 2.29029 6.25 3.62498V25.375C6.25 26.7097 7.36929 27.7916 8.75 27.7916H21.25C22.6307 27.7916 23.75 26.7097 23.75 25.375V3.62498C23.75 2.29029 22.6307 1.20831 21.25 1.20831ZM8.75 3.62498H12.5C12.5 4.29232 13.0596 4.83331 13.75 4.83331H16.25C16.9404 4.83331 17.5 4.29232 17.5 3.62498H21.25V25.375H8.75V3.62498Z" fill="#007ACD")
+        p
+            +button('ghost', "Télécharger l'application Engie", '#')
+            |  #{text}
