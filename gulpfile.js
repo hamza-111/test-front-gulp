@@ -42,3 +42,20 @@ task(
     "pug"
   )
 );
+const gulp = require('gulp');
+const shell = require('gulp-shell');
+
+// Task to deploy to the main branch
+gulp.task('deploy', function() {
+  return gulp.src('*', {read: false})
+    .pipe(shell([
+      'git checkout main',               // Switch to the main branch
+      'git pull origin main',            // Pull latest changes from remote
+      'rm -rf *',                        // Remove all files in the current directory
+      'cp -r dist/* .',                  // Copy files from dist to the root directory
+      'git add .',                       // Add the new files
+      'git commit -m "Deploy from dist"',// Commit changes
+      'git push origin main'             // Push to the main branch
+    ], {cwd: './'}));
+});
+
