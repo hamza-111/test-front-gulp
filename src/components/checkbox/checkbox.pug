@@ -1,0 +1,16 @@
+include ../atom/buttons/buttons
+
+mixin checkbox(id, labelTextAfter, labelTextBefore, errorMessage, isError = true)
+    .c-checkbox
+        span.c-checkbox__wrapper
+            input(type="checkbox" id=id)&attributes(attributes)
+            label(for=id)
+                span(class="c-checkbox__label") #{labelTextAfter} 
+                +button('ghost', "Conditions générales", '#')
+                span(class="c-checkbox__label") #{labelTextBefore}
+        if !isError
+            .c-checkbox__error
+                svg(xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="black")
+                    path(fill-rule="evenodd" clip-rule="evenodd" d="M9 17.25C4.44365 17.25 0.75 13.5563 0.75 9C0.75 4.44365 4.44365 0.75 9 0.75C13.5563 0.75 17.25 4.44365 17.25 9C17.25 13.5563 13.5563 17.25 9 17.25ZM9 15.75C12.7279 15.75 15.75 12.7279 15.75 9C15.75 5.27208 12.7279 2.25 9 2.25C5.27208 2.25 2.25 5.27208 2.25 9C2.25 12.7279 5.27208 15.75 9 15.75ZM6.53033 12.5303L9 10.0607L11.4697 12.5303L12.5303 11.4697L10.0607 9L12.5303 6.53033L11.4697 5.46967L9 7.93934L6.53033 5.46967L5.46967 6.53033L7.93934 9L5.46967 11.4697L6.53033 12.5303Z")
+
+                span(class="c-checkbox__error-message") #{errorMessage}
